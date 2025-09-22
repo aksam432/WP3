@@ -1,0 +1,76 @@
+Model:
+  title: 
+  description: 
+  elements: 
+  no_of_elements: 
+  model_type:                         # e.g  NNP, GAP, MTP, SNAP, ACE 
+  pretrained_variant:                 # e.g. None, OFF
+  training_strategy:                  # e.g. scratch, fine_tuning 
+  software_version: 
+  git_url: 
+  DOI: 
+  model_name: 
+  model_params:
+  model_metadata:
+    description:
+    no_of_params: 
+    config_file_path: 
+    cut-off_radius:    # [Å]
+    rmse_train_peratomenergy:   # [eV/atom]
+    rmse_train_forces:           # [eV/Å]
+    rmse_val_peratomenergy:     # [eV/atom]
+    rmse_val_forces:             # [eV/Å]
+  diadem_project: 
+  prediction: 
+  training_set: 
+  validation_set: 
+  targeted_system: 
+  target_properties: 
+  submitted_by: 
+  date_of_creation: 
+  file_references: 
+  atomistic_engines:
+    software:
+    version:
+    pair_style:
+    git_url:  
+  validation_ids: 
+
+
+Datasets:
+  reference:
+  name: 
+  description: 
+  type: 
+  source: 
+  target_system: 
+  no_of_structures:
+  elements: 
+  temperature_min: 
+  temperature_max: 
+  pressure_min: 
+  pressure_max: 
+  abinitio_params: 
+  submitted_by: 
+  date_of_creation: 
+
+Abinitio_metadata:
+reference: 
+  software: 
+  software_version: 
+  theory_level: 
+  functional: 
+  cut-off:        # [eV]
+  kpoints:
+    scheme: 
+    grid: 
+    shift: 
+  smearing:
+    method: 
+    width:       # [eV]
+  pseudopotential:
+    family: 
+    version: 
+    elements:
+  energy_convergence:    # [eV]
+  force_convergence:     # [eV/Å]

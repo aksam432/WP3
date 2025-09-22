@@ -1,0 +1,32 @@
+Datasets:
+  name: MPtraj
+  description: "The materials project trajectory used for training some popular NN" 
+  type: Training-set
+  source: link-to-database-external-source
+  target_system: None
+  no_of_structures: 600000
+  elements: [H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S, Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr, Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn, Fr, Ra, Ac, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og]
+  temperature_min: 0
+  temperature_max: 0
+  pressure_min: 0
+  pressure_max: 0 
+
+Abinitio_metadata:
+  software: VASP 
+  software_version: 5.4.1 
+  theory_level: DFT+U
+  functional: PBE
+  cut-off: 600       # [eV]
+  kpoints:
+    scheme: MOnkorst plank
+    grid: 3 3 3
+    shift: 0 0 0
+  smearing:
+    method: unknown 
+    width: 0.2       # [eV]
+  pseudopotential:
+    family: PAW 
+    version: unknown
+    elements: unknown
+  energy_convergence: 0.1    # [eV]
+  force_convergence: 0.1     # [eV/Å]

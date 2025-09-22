@@ -1,0 +1,67 @@
+Model:
+  title: "n2p2 potential for Silicon" 
+  description: "The n2p2 potential for silicon for glasses and amorphous system" 
+  elements: Si
+  no_of_elements: 1 
+  model_type: n2p2                         # e.g  NNP, GAP, MTP, SNAP, ACE 
+  pretrained_variant: none                 # e.g. None, OFF
+  training_strategy: scratch                 # e.g. scratch, fine_tuning 
+  software_version: 1.00
+  git_url: link-to-url
+  DOI: doi 
+  model_params:
+    description:""
+    no_of_params:100 
+    config_file_path: path-to-nn-config 
+    cut-off_radius: 6    # [Å]
+    rmse_train_peratomenergy: 0.01   # [eV/atom]
+    rmse_train_forces: 0.01           # [eV/Å]
+    rmse_val_peratomenergy: 0.01     # [eV/atom]
+    rmse_val_forces: 0.01             # [eV/Å]
+  diadem_project: none
+  prediction: ['E','F'] 
+#  training_set: "name or link to downlaod trainset"
+#  validation_set: "name or link to download val set"
+  targeted_system: glass
+  target_properties: MSD
+  atomistic_engines:
+    software: LAMMPS
+    version: xxx
+    pair_style: hd-nnp
+    git_url: link-to-lammps
+
+
+
+Datasets:
+  name: "Si100"
+  description: None
+  type: Training_set
+  source: link to trainset
+  target_system: glass
+  no_of_structures: 1000
+  elements: Si
+  temperature_min: 0 
+  temperature_max: 0
+  pressure_min: 0
+  pressure_max: 0  
+
+Abinitio_metadata:
+reference: 
+  software: 
+  software_version: 
+  theory_level: 
+  functional: 
+  cut-off:        # [eV]
+  kpoints:
+    scheme: 
+    grid: 
+    shift: 
+  smearing:
+    method: 
+    width:       # [eV]
+  pseudopotential:
+    family: 
+    version: 
+    elements:
+  energy_convergence:    # [eV]
+  force_convergence:     # [eV/Å]
