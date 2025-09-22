@@ -4,8 +4,11 @@ Model:
   elements: 
   no_of_elements: 
   model_type:                         # e.g  NNP, GAP, MTP, SNAP, ACE 
-  pretrained_variant:                 # e.g. None, OFF
+  pretrained:
+    variant:                          # e.g. None, OFF
+    model_size:                       # e.g. small, medium, large
   training_strategy:                  # e.g. scratch, fine_tuning 
+  long_range:                         # e.g. True or False
   software_version: 
   git_url: 
   DOI: 
@@ -13,13 +16,12 @@ Model:
   model_params:
   model_metadata:
     description:
-    no_of_params: 
     config_file_path: 
     cut-off_radius:    # [Å]
-    rmse_train_peratomenergy:   # [eV/atom]
-    rmse_train_forces:           # [eV/Å]
-    rmse_val_peratomenergy:     # [eV/atom]
-    rmse_val_forces:             # [eV/Å]
+    rmse_train_peratomenergy:   # [meV/atom]
+    rmse_train_forces:           # [meV/Å]
+    rmse_val_peratomenergy:     # [meV/atom]
+    rmse_val_forces:             # [meV/Å]
   diadem_project: 
   prediction: 
   training_set: 
@@ -42,8 +44,8 @@ Datasets:
   name: 
   description: 
   type: 
-  source: 
-  target_system: 
+  source_link: 
+  labels: 
   no_of_structures:
   elements: 
   temperature_min: 
