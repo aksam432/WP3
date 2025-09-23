@@ -8,7 +8,7 @@ Model:
     variant:                          # e.g. None, OFF
     model_size:                       # e.g. small, medium, large
   training_strategy:                  # e.g. scratch, fine_tuning 
-  long_range:                         # e.g. True or False
+  long_range_interaction:                         # e.g. True or False
   software_version: 
   git_url: 
   DOI: 
@@ -40,7 +40,6 @@ Model:
 
 
 Datasets:
-  reference:
   name: 
   description: 
   type: 
@@ -56,8 +55,7 @@ Datasets:
   submitted_by: 
   date_of_creation: 
 
-Abinitio_metadata:
-reference: 
+Abinitio_metadata: 
   software: 
   software_version: 
   theory_level: 
