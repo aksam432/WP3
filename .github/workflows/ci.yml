@@ -18,10 +18,11 @@ jobs:
         run: |
           python -m pip install -U pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install pytest
+          pip install pytest yaml pandas
 
       - name: Run pytest
+        working-directory: test        
         run: |
-          export PYTHONPATH="$GITHUB_WORKSPACE:$PYTHONPATH"  # so your package-less code imports
+          export PYTHONPATH="$GITHUB_WORKSPACE:$PYTHONPATH"  
           pytest
 
