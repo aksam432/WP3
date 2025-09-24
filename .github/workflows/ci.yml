@@ -23,6 +23,5 @@ jobs:
       - name: Run pytest
         working-directory: test        
         run: |
-          export PYTHONPATH="$GITHUB_WORKSPACE:$PYTHONPATH"  
           pytest
 
