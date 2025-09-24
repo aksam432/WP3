@@ -21,7 +21,7 @@ jobs:
           pip install pytest pyyaml pandas
 
       - name: Run pytest  
-        working-directory: ../test         
+        working-directory: tests         
         run: pytest
           
 
