@@ -10,9 +10,11 @@ import argparse
 from abc import ABC, abstractmethod
 from datetime import datetime
 from pymatgen.io.vasp  import Vasprun
+import yaml
+import json
 
-
-from pydantic import BaseModel, Field
+from typing import Optional, List, Union, Dict, Any
+from pydantic import BaseModel, Field,ValidationError
 
 class ModelParams(BaseModel):
     """ Validation of parameters relate to base model
@@ -108,8 +110,8 @@ class CanonicalForm(BaseModel):
     """
   
     model: Optional[Model]
-    datasets: [Dataset]
-    abinitio_metadata: Optional[AbInitioInput]
+    datasets:Optional[Dataset]
+    abinitio_metadata: Optional[AbInitioMetadata]
 
 
 class BaseEngineExtractor(ABC):
@@ -145,7 +147,7 @@ class VaspExtractor(BaseEngineExtractor):
         return metadata
 
 
-def run_etl(input_path: str, vasp_xml_path: str ) -> Dict:
+def run_etl(input_yaml_path: str, vasp_xml_path: Optional[str] ) -> Dict[str, Any]:
     """ Extracts data from the userform/canonical form and vaspxml file and outputs full canonical form in dict format
 
     Args:
@@ -154,16 +156,50 @@ def run_etl(input_path: str, vasp_xml_path: str ) -> Dict:
     Returns:
         Dict: returns full canonical form as dictionary
     """
-    pass
+    with open(input_yaml_path,'r') as f:
+        canonical_data = yaml.load(f, Loader=yaml.SafeLoader)
+
+    if not canonical_data["Abinitio_metadata"]:
+        abm = VaspExtractor(vasp_xml_path).extract()
+        canonical_data["Abinitio_metadata"].update(abm)
+
+   
+    #try:
+    #    doc = CanonicalForm(**canonical_data)
+    #except ValidationError as e:
+    #    raise SystemExit(f"[Validation] Canonical YAML invalid:\n{e}")
+    """
+    # If abinitio present, just validate & output
+    if doc.abinitio_metadata is not None:
+        out = {
+            "model": to_dict(doc.model) if doc.model else None,
+            "datasets": [to_dict(d) for d in (doc.datasets or [])] or None,
+            "abinitio_metadata": to_dict(doc.abinitio_metadata),
+        }
+        return {k: v for k, v in out.items() if v is not None}
+
+    # Otherwise, require vasprun.xml, extract & fill
+    if not vasprun_xml_path:
+        raise SystemExit("abinitio_metadata missing in YAML. Provide --vaspxml path to vasprun.xml.")
+
+    abm = extract_vasp_abinitio(vasp_xml_path)
+    out = {
+        "model": to_dict(doc.model) if doc.model else None,
+        "datasets": [to_dict(d) for d in (doc.datasets or [])] or None,
+        "abinitio_metadata": abm,
+    }
+    return {k: v for k, v in out.items() if v is not None}
+    """
+    return canonical_data
 
 def main():
     parser= argparse.ArgumentParser(description="ETL for MLIP models")
-    parser.add_argument('--vaspxml', type=str, required=True, help="Path to vasprun.xml file")
+    parser.add_argument("--input", required=True, help="Path to canonical YAML file")
+    parser.add_argument("--vaspxml", required=False, help="Path to vasprun.xml (used if YAML lacks abinitio_metadata)")
+    args = parser.parse_args()
 
-    args= parser.parse_args()
-    vasp_extractor= VaspExtractor(args.vaspxml)
-    vasp_metadata= vasp_extractor.extract()
-    print(vasp_metadata)
+    result = run_etl(args.input, args.vaspxml)
+    print(json.dumps(result, indent=2, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()
