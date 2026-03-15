@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This script defines and ETL script for :
+"""This script defines an ETL script for :
 1) Extracting data from userform
 2) Extracting metadata from abinitio engines (for now VASP)
 3) Transforming the data to fit the canonical schema
@@ -159,9 +159,9 @@ def run_etl(input_yaml_path: str, vasp_xml_path: Optional[str] ) -> Dict[str, An
     with open(input_yaml_path,'r') as f:
         canonical_data = yaml.load(f, Loader=yaml.SafeLoader)
 
-    if not canonical_data["Abinitio_metadata"]:
+    if  canonical_data["Abinitio_metadata"]:
         abm = VaspExtractor(vasp_xml_path).extract()
-        canonical_data["Abinitio_metadata"].update(abm)
+        canonical_data["Abinitio_metadata"] = abm                #Changes from imanol
 
    
     #try:
