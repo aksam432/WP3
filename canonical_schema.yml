@@ -1,76 +1,71 @@
 Model:
-  title: 
+  modelName: 
   description: 
   elements: 
-  no_of_elements: 
-  model_type:                         # e.g  NNP, GAP, MTP, SNAP, ACE 
-  pretrained:
-    variant:                          # e.g. None, OFF
-    model_size:                       # e.g. small, medium, large
-  training_strategy:                  # e.g. scratch, fine_tuning 
-  long_range_interaction:                         # e.g. True or False
-  software_version: 
-  git_url: 
-  DOI: 
-  model_name: 
-  model_params:
-  model_metadata:
+  noOfElements: 
+  modelArchitecture:                         # e.g  NNP, GAP, MTP, SNAP, ACE 
+  modelVariant:                              # e.g. v2,OFF etc
+  modelSize:                                 # Give the number of parameters
+  trainingStrategy:                          # e.g. scratch, fine_tuning, Unknown
+  trainingDescription:
+  pretrainedVersion:                          # if finetuned provide pretrained version
+  longRangeInteraction:                         # e.g. True or False
+  softwareVersion: 
+  softwareUrl: 
+  doi:  
+  modelParams:
+  modelMetadata:
     description:
-    config_file_path: 
-    cut-off_radius:    # [Å]
-    rmse_train_peratomenergy:   # [meV/atom]
-    rmse_train_forces:           # [meV/Å]
-    rmse_val_peratomenergy:     # [meV/atom]
-    rmse_val_forces:             # [meV/Å]
-  diadem_project: 
+    configFile:
+    ConfigFileUrl: 
+    cutOffRadius:    # [Å]
+    rmseTrainPeratomenergy:   # [meV/atom]
+    rmseTrainForces:           # [meV/Å]
+    rmseValPeratomenergy:     # [meV/atom]
+    rmseValForces:             # [meV/Å]
+  diademProject: 
   prediction: 
-  training_set: 
-  validation_set: 
-  targeted_system: 
-  target_properties: 
-  submitted_by: 
-  date_of_creation: 
-  file_references: 
-  atomistic_engines:
+  trainingSet:
+  testSet: 
+  validationSet: 
+  targetSystem: 
+  targetProperties:
+  CheckpointUrl: 
+  fileReferences: 
+  atomisticEngines:
     software:
     version:
-    pair_style:
-    git_url:  
-  validation_ids: 
+    pairStyle:
+    url:  
+ 
 
 
 Datasets:
   name: 
   description: 
   type: 
-  source_link: 
+  sourceFile: 
   labels: 
-  no_of_structures:
+  noOfStructures:
   elements: 
-  temperature_min: 
-  temperature_max: 
-  pressure_min: 
-  pressure_max: 
-  abinitio_params: 
-  submitted_by: 
-  date_of_creation: 
+  minTemperature: 
+  maxTemperature: 
+  minPressure: 
+  maxPressure: 
+  abinitioParams:
+  userForm:
+
 
 Abinitio_metadata: 
   software: 
-  software_version: 
-  theory_level: 
-  functional: 
-  cut-off:        # [eV]
+  version:
+  logFile: 
+  theoryLevel: 
+  functional:
+  hubbardU: 
+  BasisCutOff:        # [eV]
   kpoints:
-    scheme: 
-    grid: 
-    shift: 
-  smearing:
-    method: 
-    width:       # [eV]
+  smearing:      # [eV]
   pseudopotential:
-    family: 
-    version: 
-    elements:
-  energy_convergence:    # [eV]
-  force_convergence:     # [eV/Å]
+  energyConvergence:    # [eV]
+  forceConvergence:     # [eV/Å]

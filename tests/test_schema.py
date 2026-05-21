@@ -24,7 +24,7 @@ def excel_to_keys():
     
 
     # Add an extra key to match canonical form 
-    row_values.append('model_metadata')
+    row_values.append('modelMetadata')
   
     return set(row_values)
 
@@ -49,4 +49,5 @@ def test_schema(tmp_path):
 
     ex_scheme= excel_to_keys()
     can_scheme= get_canonical_keys()
+    print(can_scheme -ex_scheme)
     assert  can_scheme.issubset(ex_scheme)
