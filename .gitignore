@@ -1,0 +1,62 @@
+# =========================
+# OS files (macOS)
+# =========================
+.DS_Store
+**/.DS_Store
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# pytest cache
+.pytest_cache/
+.cache/
+
+# coverage
+.coverage
+htmlcov/
+
+# virtual environments
+venv/
+env/
+.venv/
+
+# =========================
+# Jupyter (if used later)
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Excel temp/lock files
+# =========================
+~$*.xlsx
+~$*.xls
+
+# Excel autosave / temp
+*.tmp
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Project-specific noise
+# =========================
+Schema/.DS_Store
+Examples/**/junk/
+public_datasets/*.tmp
+
+# compiled python test files
+tests/__pycache__/
+*.pyc
