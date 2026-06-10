@@ -1,0 +1,51 @@
+Datasets:
+  name: Si100
+  description: "Glass training set for silicon with 100 sructures" 
+  type: Training
+  sourceFile: temp_train.extxyz 
+  labels: "glass"
+  noOfStructures: 100
+  elements: [Si]
+  minTemperature: 0
+  maxTemperature: 0
+  minPressure: 0
+  maxPressure: 0 
+  Abinitio_metadata: <to-be-extracted from logfile>
+    software: 
+    version: 
+    logFile: vasprun.xml
+    theory_level: 
+    functional: 
+    hubbardU: 
+    BasisCutOff:       # [eV]
+    kpoints: 
+    smearing: 
+    pseudopotential: 
+    energy_convergence:     # [eV]
+    force_convergence:      # [eV/Å]
+
+Datasets:
+  name: Si100_test
+  description: "Glass test set for silicon with 100 sructures" 
+  type: Test
+  sourceFile: temp_test.extxyz 
+  labels: "glass"
+  noOfStructures: 100
+  elements: [Si]
+  minTemperature: 0
+  maxTemperature: 0
+  minPressure: 0
+  maxPressure: 0 
+  Abinitio_metadata: <to-be-extracted from logfile>
+    software: 
+    version: 
+    logFile: vasprun.xml
+    theory_level: 
+    functional: 
+    hubbardU: 
+    BasisCutOff:       # [eV]
+    kpoints: 
+    smearing: 
+    pseudopotential: 
+    energy_convergence:     # [eV]
+    force_convergence:      # [eV/Å]

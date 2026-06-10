@@ -1,0 +1,34 @@
+SYSTEM = NVT-SiO2-384at-3600K
+
+  ALGO   = VeryFast
+  PREC   = Normal
+  MAXMIN = 100
+  ENCUT  = 600
+  NELMIN = 4
+  NELM   =30 
+
+  EDIFF  = 5E-7
+  EDIFFG = -1E-3
+
+  IBRION = 0
+  POTIM = 1.0
+  NSW    =40 
+  TEBEG=3600.
+  ISIF=1
+ 
+  ISYM   = 0
+  SMASS=1
+  ISTART =0
+  ICHARG =2
+  ISMEAR = 0; SIGMA=0.1
+  LREAL  = .TRUE.
+  LCHARG = .TRUE.
+
+  GGA =    PS
+
+calcul parallele
+   LPLANE=.TRUE.
+   NCORE=16 
+   LSCALU=.FALSE.
+   NSIM=4
+
