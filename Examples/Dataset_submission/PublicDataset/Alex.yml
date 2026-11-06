@@ -1,0 +1,25 @@
+Datasets:
+  name: Alexandria
+  description: "Large collection of DFT structure relaxation trajectories with energies, forces, stresses for ~3M materials. Aimed at training ML potentials for materials discovery."
+  type: Training
+  sourceUrl: https://doi.org/10.1002/adma.202210788
+  labels: "Materials"
+  noOfStructures: 30497628
+  elements: null
+  minTemperature: null    # [K]
+  maxTemperature: null    # [K]
+  minPressure: null       # [GPa]
+  maxPressure: null       # [GPa]
+  Abinitio_metadata:
+    software: VASP
+    version: null
+    logFile: null
+    theory_level: DFT
+    functional: PBE
+    hubbardU: null          # [eV]
+    BasisCutOff: null       # [eV]
+    kpoints: null
+    smearing: null
+    pseudopotential: PBE
+    energy_convergence: null  # [eV]
+    force_convergence: null   # [eV/Å]

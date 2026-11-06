@@ -1,0 +1,25 @@
+Datasets:
+  name: MAD
+  description: "Massive Atomic Diversity: a compact universal dataset for atomistic machine learning"
+  type: Training
+  sourceUrl: https://doi.org/10.1038/s41597-025-06109-y
+  labels: "Materials"
+  noOfStructures: 95595
+  elements: [H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S, Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr, Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, Rn]
+  minTemperature: null
+  maxTemperature: null
+  minPressure: null
+  maxPressure: null
+  Abinitio_metadata:
+    software: Quantum ESPRESSO
+    version: "7.2"
+    logFile: null
+    theory_level: DFT
+    functional: PBEsol
+    hubbardU: null
+    BasisCutOff: 1496.63  # [eV]; original paper: 110 Ry wavefunction cutoff; charge-density cutoff: 1320 Ry
+    kpoints: "Gamma-centered grid, 0.125 inverse angstrom resolution in periodic dimensions; one k-point in nonperiodic dimensions"
+    smearing: "Marzari-Vanderbilt-DeVita-Payne cold smearing; width 0.01 Ry"
+    pseudopotential: "SSSP v1.2 (efficiency set)"
+    energy_convergence: null
+    force_convergence: null
