@@ -5,21 +5,12 @@ Datasets:
   sourceUrl: https://doi.org/10.1002/adma.202210788
   labels: "Materials"
   noOfStructures: 30497628
-  elements: null
-  minTemperature: null    # [K]
-  maxTemperature: null    # [K]
-  minPressure: null       # [GPa]
-  maxPressure: null       # [GPa]
+  minTemperature: 0.0    # [K]
+  maxTemperature: 0.0    # [K]
+  minPressure: 0.0       # [GPa]
+  maxPressure: 0.0       # [GPa]
   Abinitio_metadata:
     software: VASP
-    version: null
-    logFile: null
     theory_level: DFT
     functional: PBE
-    hubbardU: null          # [eV]
-    BasisCutOff: null       # [eV]
-    kpoints: null
-    smearing: null
-    pseudopotential: PBE
-    energy_convergence: null  # [eV]
-    force_convergence: null   # [eV/Å]
+  

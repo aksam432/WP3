@@ -13,13 +13,6 @@ Datasets:
   Abinitio_metadata:
     software: VASP 
     version: 5.4.1 
-    logFile:
     theory_level: DFT+U
     functional: PBE
-    hubbardU: 0.0
-    BasisCutOff: 600       # [eV]
-    kpoints: 3 3 3
-    smearing: 0.2
-    pseudopotential: PAW
-    energy_convergence: 0.1    # [eV]
-    force_convergence: 0.1     # [eV/Å]
+    
